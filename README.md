@@ -12,7 +12,7 @@ This is used by me for sending commands from a Stream Deck to Tuya compatible de
 - ENDPOINT - [see list here](https://developer.tuya.com/en/docs/iot/api-request?id=Ka4a8uuo1j4t4#title-1-Endpoints)
 
 ### CLI Args (all required for now)
-1. Device_ID (22 char hex, also called 'id' in API)
+1. Device_IDs (22 char hex, also called 'id' in API) - separate multiple Device_IDs with commas
 2. Command/action to send
 3. Value for action (bool or int based on command type)
 4. Brightness value (25-255) for color command (only required for 'colour_data' command)
@@ -22,6 +22,10 @@ This is used by me for sending commands from a Stream Deck to Tuya compatible de
 - Turn light off
 
 `python.exe lights.py abcd1234ef567890abcd12 switch_led False`
+
+- Turn two light on
+
+`python.exe lights.py abcd1234ef567890abcd12,cd1234ef567890abcd12ab switch_led True`
 
 - Change color to red (H of HSV to zero) and set brightness (V of HSV) to 50%
 
